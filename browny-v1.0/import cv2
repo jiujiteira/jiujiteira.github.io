@@ -1,0 +1,70 @@
+import cv2
+import numpy as np
+
+# Create a new video writer
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
+out = cv2.VideoWriter('output.avi', fourcc, 30.0, (640, 480))
+
+# Create a new image with a white background
+width = 640
+height = 480
+image = np.zeros((height, width, 3), dtype=np.uint8)
+
+# Get the drawing context
+draw = ImageDraw.Draw(image)
+
+# Set the initial position of the shape
+x = width // 2
+y = height // 2
+
+for i in range(300):
+    # Clear the image
+    image.fill(0)
+
+    # Draw the shape
+    draw.ellipse([x - 10, y - 10, x + 10, y + 10],fill=(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
+
+    # Update the position of the shape
+    x += 5
+    y += 5
+
+    # Write the frame to the video
+    out.write(image)
+
+# Release the video writer
+out.release()
+import cv2
+import numpy as np
+
+# Create a new video writer
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
+out = cv2.VideoWriter('output.avi', fourcc, 30.0, (640, 480))
+
+# Create a new image with a white background
+width = 640
+height = 480
+image = np.zeros((height, width, 3), dtype=np.uint8)
+
+# Get the drawing context
+draw = ImageDraw.Draw(image)
+
+# Set the initial position of the shape
+x = width // 2
+y = height // 2
+
+for i in range(300):
+    # Clear the image
+    image.fill(0)
+
+    # Draw the shape
+    draw.ellipse([x - 10, y - 10, x + 10, y + 10],fill=(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)))
+
+    # Update the position of the shape
+    x += 5
+    y += 5
+
+    # Write the frame to the video
+    out.write(image)
+
+# Release the video writer
+out.release()
